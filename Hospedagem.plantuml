@@ -1,0 +1,35 @@
+@startuml Hospedagem
+
+entity pessoa{
+    id <<PK>>
+    endereco
+    telefone
+}
+
+entity pessoa_fisica{
+    id <<PK>>
+    nome
+    cpf
+    id_pessoa <<FK>>
+
+}
+
+entity pessoa_juridica{
+    id <<PK>>
+    razao_social
+    cnpj
+    id_pessoa <<FK>>
+}
+
+
+entity funcionario{
+    id <<PK>>
+    matricula
+    id_pessoa_fisica <<FK>>
+}
+
+pessoa -- pessoa_fisica
+pessoa -- pessoa_juridica
+pessoa_fisica -- funcionario
+
+@enduml
