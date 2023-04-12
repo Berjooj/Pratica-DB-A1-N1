@@ -2,34 +2,131 @@
 
 entity pessoa{
     id <<PK>>
-    endereco
     telefone
+    pais
+    estado
+    endereco
+    cidade
+    cep
 }
 
 entity pessoa_fisica{
     id <<PK>>
     nome
     cpf
+    rg
+    genero
+    data_nascimento
+    telefone_emergencia
     id_pessoa <<FK>>
-
 }
 
 entity pessoa_juridica{
     id <<PK>>
-    razao_social
     cnpj
+    razao_social
+    nome_fantasia
+    data_abertura
     id_pessoa <<FK>>
 }
 
+entity cargo{
+    id <<PK>>
+}
 
 entity funcionario{
     id <<PK>>
     matricula
+    data_admissao
+    situacao
+    id_cargo <<FK>>
     id_pessoa_fisica <<FK>>
+}
+
+entity reserva{
+    id <<PK>>
+    id_pessoa <<FK>>
+}
+
+entity hospedagem{
+    id_reserva <<FK>>
+    id_pessoa_fisica <<FK>>
+}
+
+entity tipo_local_hospedagem{
+    id <<PK>>
+}
+
+entity local_hospedagem{
+    id <<PK>>
+    id_hospedagem <<FK>>
+    id_tipo_local_hospedagem <<FK>>
+}
+
+entity tipo_quarto{
+    id <<PK>>
+}
+
+entity quarto{
+    id <<PK>>
+
+    id_tipo_quarto <<FK>>
+    id_hospedagem <<FK>>
+}
+
+entity servico{
+    id <<PK>>
+}
+
+entity servico_funcionario_hospedagem{
+    id_servico <<FK>>
+    id_funcionario <<FK>>
+    id_hospedagem <<FK>>
+}
+
+entity produto{
+    id <<PK>>
+    id_local_hospedagem <<FK>>
+}
+
+entity comanda_produto{
+    id_comanda <<FK>>
+    id_produto <<FK>>
+}
+
+entity comanda{
+    id <<PK>>
+    id_produto <<FK>>
+    id_pessoa <<FK>>
 }
 
 pessoa -- pessoa_fisica
 pessoa -- pessoa_juridica
+
 pessoa_fisica -- funcionario
+
+funcionario -- cargo
+
+reserva -- pessoa
+
+hospedagem -- reserva
+hospedagem -- pessoa_fisica
+
+local_hospedagem -- tipo_local_hospedagem
+
+quarto -- tipo_quarto
+quarto -- local_hospedagem
+quarto -- hospedagem
+
+servico_funcionario_hospedagem -- servico
+servico_funcionario_hospedagem -- funcionario
+servico_funcionario_hospedagem -- hospedagem
+
+produto -- local_hospedagem
+
+comanda -- hospedagem
+
+comanda_produto -- comanda
+comanda_produto -- produto
 
 @enduml
