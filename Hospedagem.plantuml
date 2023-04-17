@@ -32,6 +32,8 @@ entity pessoa_juridica{
 
 entity cargo{
     id <<PK>>
+    nome
+    salario
 }
 
 entity funcionario{
@@ -47,65 +49,94 @@ entity reserva{
     id <<PK>>
     id_pessoa <<FK>>
     id_local_hospedagem <<FK>>
+    data_inicio
+    data_fim
+    valor_total
 }
 
 entity hospedagem{
     id <<PK>>
-    id_reserva <<FK>>
     id_pessoa_fisica <<FK>>
+    id_reserva <<FK>>
     id_comanda <<FK>>
+    id_quarto <<FK>>
+    data_check_in
+    data_check_out
+}
+
+entity pessoa_hospedagem{
+    id_hospedagem <<FK>>
+    id_pessoa <<FK>>
 }
 
 entity tipo_local_hospedagem{
     id <<PK>>
+    nome
+    descricao
+    numero_de_camas
 }
 
 entity local_hospedagem{
     id <<PK>>
     id_hospedagem <<FK>>
     id_tipo_local_hospedagem <<FK>>
+    nome
+    descricao
+    endereco
 }
 
 entity tipo_quarto{
     id <<PK>>
+    nome
+    preco
+    descricao
 }
 
 entity quarto{
     id <<PK>>
     id_tipo_quarto <<FK>>
     id_hospedagem <<FK>>
+    capacidade
 }
 
 entity servico{
     id <<PK>>
+    nome
+    preco
+    descricao
 }
 
 entity servico_funcionario_hospedagem{
     id_servico <<FK>>
     id_funcionario <<FK>>
     id_hospedagem <<FK>>
+    data_inicio_servico
+    data_fim_servico
+    status_do_servico
 }
 
 entity produto{
     id <<PK>>
     id_local_hospedagem <<FK>>
+    nome
+    descricao
+    preco
+    quantidade_em_estoque
 }
 
 entity comanda_produto{
     id_comanda <<FK>>
     id_produto <<FK>>
+    quantidade
+    valor
 }
 
 entity comanda{
     id <<PK>>
-    id_produto <<FK>>
     id_pessoa <<FK>>
+    data_pagamento
+    forma_pagamento
 }
-entity pessoa_hospedagem{
-    id_hsopedagem <<FK>>
-    id_pessoa <<FK>>
-}
-
 
 pessoa -- pessoa_fisica
 pessoa -- pessoa_juridica
@@ -127,8 +158,6 @@ quarto -- local_hospedagem
 servico_funcionario_hospedagem -- servico
 servico_funcionario_hospedagem -- funcionario
 servico_funcionario_hospedagem -- hospedagem
-
-servico -- local_hospedagem
 
 produto -- local_hospedagem
 
