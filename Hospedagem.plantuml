@@ -46,11 +46,14 @@ entity funcionario{
 entity reserva{
     id <<PK>>
     id_pessoa <<FK>>
+    id_local_hospedagem <<FK>>
 }
 
 entity hospedagem{
+    id <<PK>>
     id_reserva <<FK>>
     id_pessoa_fisica <<FK>>
+    id_comanda <<FK>>
 }
 
 entity tipo_local_hospedagem{
@@ -69,7 +72,6 @@ entity tipo_quarto{
 
 entity quarto{
     id <<PK>>
-
     id_tipo_quarto <<FK>>
     id_hospedagem <<FK>>
 }
@@ -99,6 +101,11 @@ entity comanda{
     id_produto <<FK>>
     id_pessoa <<FK>>
 }
+entity pessoa_hospedagem{
+    id_hsopedagem <<FK>>
+    id_pessoa <<FK>>
+}
+
 
 pessoa -- pessoa_fisica
 pessoa -- pessoa_juridica
@@ -110,17 +117,18 @@ funcionario -- cargo
 reserva -- pessoa
 
 hospedagem -- reserva
-hospedagem -- pessoa_fisica
 
 local_hospedagem -- tipo_local_hospedagem
+local_hospedagem -- reserva
 
 quarto -- tipo_quarto
 quarto -- local_hospedagem
-quarto -- hospedagem
 
 servico_funcionario_hospedagem -- servico
 servico_funcionario_hospedagem -- funcionario
 servico_funcionario_hospedagem -- hospedagem
+
+servico -- local_hospedagem
 
 produto -- local_hospedagem
 
@@ -128,5 +136,8 @@ comanda -- hospedagem
 
 comanda_produto -- comanda
 comanda_produto -- produto
+
+pessoa_hospedagem -- hospedagem
+pessoa_hospedagem -- pessoa_fisica
 
 @enduml
