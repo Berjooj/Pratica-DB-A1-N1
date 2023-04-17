@@ -1,0 +1,182 @@
+@startuml
+
+entity pessoa{
+    id <<PK>>
+    telefone
+    pais
+    estado
+    endereco
+    cidade
+    cep
+}
+
+entity pessoa_fisica{
+    id <<PK>>
+    nome
+    cpf
+    rg
+    genero
+    data_nascimento
+    telefone_emergencia
+    id_pessoa <<FK>>
+}
+
+entity pessoa_juridica{
+    id <<PK>>
+    cnpj
+    razao_social
+    nome_fantasia
+    data_abertura
+    id_pessoa <<FK>>
+}
+
+entity cargo{
+    id <<PK>>
+    nome
+    salario
+    hora_inicio
+    hora_fim
+    
+
+}
+
+entity funcionario{
+    id <<PK>>
+    matricula
+    data_admissao
+    situacao
+    id_cargo <<FK>>
+    id_pessoa_fisica <<FK>>
+}
+
+entity reserva{
+    id <<PK>>
+    id_pessoa <<FK>>
+    id_local_hospedagem <<FK>>
+    data_inicio
+    data_fim
+    valor_total
+}
+
+entity hospedagem{
+    id <<PK>>
+    id_reserva <<FK>>
+    id_pessoa_fisica <<FK>>
+    id_comanda <<FK>>
+    id_quarto <<FK>>
+    data_check-in
+    data_check-out
+    
+}
+
+entity tipo_local_hospedagem{
+    id <<PK>>
+    nome
+    descricao
+    numero_de_camas
+}
+
+entity local_hospedagem{
+    id <<PK>>
+    id_hospedagem <<FK>>
+    id_tipo_local_hospedagem <<FK>>
+    descricao
+    endereco
+    
+}
+
+entity tipo_quarto{
+    id <<PK>>
+    nome
+    preco_do_quarto
+    descricao_do_quarto
+}
+
+entity quarto{
+    id <<PK>>
+    id_tipo_quarto <<FK>>
+    id_hospedagem <<FK>>
+    capacidade
+  
+}
+
+entity servico{
+    id <<PK>>
+    nome
+    preco_do_servico
+    descricao_do_servico
+}
+
+entity servico_funcionario_hospedagem{
+    id_servico <<FK>>
+    id_funcionario <<FK>>
+    id_hospedagem <<FK>>
+    data_do_servico
+    hora_do_Servico
+    status_do_servico
+}
+
+entity produto{
+    id <<PK>>
+    id_local_hospedagem <<FK>>
+    nome_produto
+    descricao_produto
+    preco_produto
+    disponiblidade_em_estoque
+}
+
+entity comanda_produto{
+    id_comanda <<FK>>
+    id_produto <<FK>>
+    quantidade
+    valor
+}
+
+entity comanda{
+    id <<PK>>
+    id_produto <<FK>>
+    id_pessoa <<FK>>
+    data
+    
+}
+entity pessoa_hospedagem{
+    id_hsopedagem <<FK>>
+    id_pessoa <<FK>>
+    id_quarto <<FK>>
+    
+}
+
+
+pessoa -- pessoa_fisica
+pessoa -- pessoa_juridica
+
+pessoa_fisica -- funcionario
+
+funcionario -- cargo
+
+reserva -- pessoa
+
+hospedagem -- reserva
+
+local_hospedagem -- tipo_local_hospedagem
+local_hospedagem -- reserva
+
+quarto -- tipo_quarto
+quarto -- local_hospedagem
+
+servico_funcionario_hospedagem -- servico
+servico_funcionario_hospedagem -- funcionario
+servico_funcionario_hospedagem -- hospedagem
+
+servico -- local_hospedagem
+
+produto -- local_hospedagem
+
+comanda -- hospedagem
+
+comanda_produto -- comanda
+comanda_produto -- produto
+
+pessoa_hospedagem -- hospedagem
+pessoa_hospedagem -- pessoa_fisica
+@enduml
