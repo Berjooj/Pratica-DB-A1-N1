@@ -1,0 +1,91 @@
+CREATE SEQUENCE pessoa_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE pessoa ALTER COLUMN id SET DEFAULT NEXTVAL('pessoa_id_seq');
+
+CREATE SEQUENCE pessoa_fisica_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE pessoa_fisica ALTER COLUMN id SET DEFAULT NEXTVAL('pessoa_fisica_id_seq');
+
+CREATE SEQUENCE pessoa_juridica_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE pessoa_juridica ALTER COLUMN id SET DEFAULT NEXTVAL('pessoa_juridica_id_seq');
+
+CREATE SEQUENCE cargo_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE cargo ALTER COLUMN id SET DEFAULT NEXTVAL('cargo_id_seq');
+
+CREATE SEQUENCE funcionario_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE funcionario ALTER COLUMN id SET DEFAULT NEXTVAL('funcionario_id_seq');
+
+CREATE SEQUENCE reserva_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE reserva ALTER COLUMN id SET DEFAULT NEXTVAL('reserva_id_seq');
+
+CREATE SEQUENCE tipo_local_hospedagem_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE tipo_local_hospedagem ALTER COLUMN id SET DEFAULT NEXTVAL('tipo_local_hospedagem_id_seq');
+
+CREATE SEQUENCE local_hospedagem_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE local_hospedagem ALTER COLUMN id SET DEFAULT NEXTVAL('local_hospedagem_id_seq');
+
+CREATE SEQUENCE tipo_quarto_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE tipo_quarto ALTER COLUMN id SET DEFAULT NEXTVAL('tipo_quarto_id_seq');
+
+CREATE SEQUENCE quarto_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE quarto ALTER COLUMN id SET DEFAULT NEXTVAL('quarto_id_seq');
+
+CREATE SEQUENCE servico_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE servico ALTER COLUMN id SET DEFAULT NEXTVAL('servico_id_seq');
+
+
+CREATE SEQUENCE produto_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE produto ALTER COLUMN id SET DEFAULT NEXTVAL('produto_id_seq');
+
+CREATE SEQUENCE comanda_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE comanda ALTER COLUMN id SET DEFAULT NEXTVAL('comanda_id_seq');
