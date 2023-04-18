@@ -10,6 +10,14 @@ entity pessoa{
     cep
 }
 
+
+CREATE SEQUENCE pessoa_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE pessoa ALTER COLUMN id SET DEFAULT NEXTVAL('pessoa_id_seq');
+
 entity pessoa_fisica{
     id <<PK>>
     nome
@@ -21,6 +29,17 @@ entity pessoa_fisica{
     id_pessoa <<FK>>
 }
 
+
+CREATE SEQUENCE pessoa_fisica_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE pessoa_fisica ALTER COLUMN id SET DEFAULT NEXTVAL('pessoa_fisica_id_seq');
+
+
+
+
 entity pessoa_juridica{
     id <<PK>>
     cnpj
@@ -30,11 +49,25 @@ entity pessoa_juridica{
     id_pessoa <<FK>>
 }
 
+CREATE SEQUENCE pessoa_juridica_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE pessoa_juridica ALTER COLUMN id SET DEFAULT NEXTVAL('pessoa_juridica_id_seq');
+
+
 entity cargo{
     id <<PK>>
-    nome
-    salario
 }
+
+CREATE SEQUENCE cargo_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE cargo ALTER COLUMN id SET DEFAULT NEXTVAL('cargo_id_seq');
+
 
 entity funcionario{
     id <<PK>>
@@ -45,98 +78,134 @@ entity funcionario{
     id_pessoa_fisica <<FK>>
 }
 
+CREATE SEQUENCE funcionario_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE funcionario ALTER COLUMN id SET DEFAULT NEXTVAL('funcionario_id_seq');
+
+
 entity reserva{
     id <<PK>>
     id_pessoa <<FK>>
-    id_local_hospedagem <<FK>>
-    data_inicio
-    data_fim
-    valor_total
 }
+
+CREATE SEQUENCE reserva_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE reserva ALTER COLUMN id SET DEFAULT NEXTVAL('reserva_id_seq');
+
 
 entity hospedagem{
-    id <<PK>>
-    id_pessoa_fisica <<FK>>
     id_reserva <<FK>>
-    id_comanda <<FK>>
-    id_quarto <<FK>>
-    data_check_in
-    data_check_out
-}
-
-entity pessoa_hospedagem{
-    id_hospedagem <<FK>>
-    id_pessoa <<FK>>
+    id_pessoa_fisica <<FK>>
 }
 
 entity tipo_local_hospedagem{
     id <<PK>>
-    nome
-    descricao
-    numero_de_camas
 }
+
+CREATE SEQUENCE tipo_local_hospedagem_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE tipo_local_hospedagem ALTER COLUMN id SET DEFAULT NEXTVAL('tipo_local_hospedagem_id_seq');
+
 
 entity local_hospedagem{
     id <<PK>>
     id_hospedagem <<FK>>
     id_tipo_local_hospedagem <<FK>>
-    nome
-    descricao
-    endereco
 }
+
+CREATE SEQUENCE local_hospedagem_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE local_hospedagem ALTER COLUMN id SET DEFAULT NEXTVAL('local_hospedagem_id_seq');
+
 
 entity tipo_quarto{
     id <<PK>>
-    nome
-    preco
-    descricao
 }
+
+
+CREATE SEQUENCE tipo_quarto_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE tipo_quarto ALTER COLUMN id SET DEFAULT NEXTVAL('tipo_quarto_id_seq');
 
 entity quarto{
     id <<PK>>
+
     id_tipo_quarto <<FK>>
     id_hospedagem <<FK>>
-    capacidade
 }
+
+CREATE SEQUENCE quarto_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE quarto ALTER COLUMN id SET DEFAULT NEXTVAL('quarto_id_seq');
+
+
 
 entity servico{
     id <<PK>>
-    nome
-    preco
-    descricao
 }
+
+CREATE SEQUENCE servico_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE servico ALTER COLUMN id SET DEFAULT NEXTVAL('servico_id_seq');
 
 entity servico_funcionario_hospedagem{
     id_servico <<FK>>
     id_funcionario <<FK>>
     id_hospedagem <<FK>>
-    data_inicio_servico
-    data_fim_servico
-    status_do_servico
 }
 
 entity produto{
     id <<PK>>
     id_local_hospedagem <<FK>>
-    nome
-    descricao
-    preco
-    quantidade_em_estoque
 }
+
+
+CREATE SEQUENCE produto_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE produto ALTER COLUMN id SET DEFAULT NEXTVAL('produto_id_seq');
 
 entity comanda_produto{
     id_comanda <<FK>>
     id_produto <<FK>>
-    quantidade
-    valor
 }
 
 entity comanda{
     id <<PK>>
+    id_produto <<FK>>
     id_pessoa <<FK>>
-    data_pagamento
-    forma_pagamento
 }
+
+
+CREATE SEQUENCE comanda_id_seq
+INCREMENT 1
+START 1
+CACHE 1;
+
+ALTER TABLE comanda ALTER COLUMN id SET DEFAULT NEXTVAL('comanda_id_seq');
 
 pessoa -- pessoa_fisica
 pessoa -- pessoa_juridica
@@ -148,12 +217,13 @@ funcionario -- cargo
 reserva -- pessoa
 
 hospedagem -- reserva
+hospedagem -- pessoa_fisica
 
 local_hospedagem -- tipo_local_hospedagem
-local_hospedagem -- reserva
 
 quarto -- tipo_quarto
 quarto -- local_hospedagem
+quarto -- hospedagem
 
 servico_funcionario_hospedagem -- servico
 servico_funcionario_hospedagem -- funcionario
@@ -165,8 +235,5 @@ comanda -- hospedagem
 
 comanda_produto -- comanda
 comanda_produto -- produto
-
-pessoa_hospedagem -- hospedagem
-pessoa_hospedagem -- pessoa_fisica
 
 @enduml
