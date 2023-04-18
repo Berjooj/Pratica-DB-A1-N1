@@ -5,8 +5,8 @@ entity pessoa{
     telefone
     pais
     estado
-    endereco
     cidade
+    endereco
     cep
 }
 
@@ -30,19 +30,14 @@ entity pessoa_juridica{
     id_pessoa <<FK>>
 }
 
-entity cargo{
-    id <<PK>>
-    nome
-    salario
-}
-
 entity funcionario{
     id <<PK>>
+    id_pessoa_fisica <<FK>>
     matricula
     data_admissao
     situacao
-    id_cargo <<FK>>
-    id_pessoa_fisica <<FK>>
+    cargo
+    salario
 }
 
 entity reserva{
@@ -51,6 +46,7 @@ entity reserva{
     id_local_hospedagem <<FK>>
     data_inicio
     data_fim
+    status_reserva
     valor_total
 }
 
@@ -58,13 +54,9 @@ entity hospedagem{
     id <<PK>>
     id_reserva <<FK>>
     id_comanda <<FK>>
+    id_pessoa_fisica <<FK>>
     data_check_in
     data_check_out
-}
-
-entity pessoa_hospedagem{
-    id_hospedagem <<FK>>
-    id_pessoa <<FK>>
 }
 
 entity tipo_local_hospedagem{
@@ -77,7 +69,7 @@ entity tipo_local_hospedagem{
 entity local_hospedagem{
     id <<PK>>
     id_tipo_local_hospedagem <<FK>>
-    id_ quarto <<FK>>
+    id_quarto <<FK>>
     nome
     descricao
     endereco
@@ -93,21 +85,21 @@ entity tipo_quarto{
 entity quarto{
     id <<PK>>
     id_tipo_quarto <<FK>>
-    id_hospedagem <<FK>>
     capacidade
 }
 
-entity servico{
+entity tipo_servico{
     id <<PK>>
     nome
     preco
     descricao
 }
 
-entity servico_funcionario_hospedagem{
-    id_servico <<FK>>
+entity servico{
+    id <<PK>>
     id_funcionario <<FK>>
     id_hospedagem <<FK>>
+    id_tipo_servico <<FK>>
     data_inicio_servico
     data_fim_servico
     status_do_servico
@@ -122,49 +114,36 @@ entity produto{
     quantidade_em_estoque
 }
 
-entity comanda_produto{
-    id_comanda <<FK>>
+entity hospedagem_produto{
+    id_hospedagem <<FK>>
     id_produto <<FK>>
     quantidade
     valor
 }
 
-entity comanda{
-    id <<PK>>
-    id_pessoa <<FK>>
-    data_pagamento
-    forma_pagamento
-}
+pessoa "1..0" -- "1..1" pessoa_fisica
+pessoa "1..0" -- "1..1" pessoa_juridica
 
-pessoa -- pessoa_fisica
-pessoa -- pessoa_juridica
+pessoa_fisica "1..0" -- "1..1" funcionario
 
-pessoa_fisica -- funcionario
+reserva "n..1" -- "1..n" pessoa
+hospedagem "1..1" -- "1..0" reserva
 
-funcionario -- cargo
+local_hospedagem "1..0" -- "1..1" reserva
+local_hospedagem "1..1" -- "1..1" tipo_local_hospedagem
 
-reserva -- pessoa
+quarto "n..1" -- "1..n" tipo_quarto
+quarto "n..1" -- "1..n" local_hospedagem
 
-hospedagem -- reserva
+produto "n..1" -- "1..n" local_hospedagem
 
-local_hospedagem -- tipo_local_hospedagem
-local_hospedagem -- reserva
+hospedagem_produto "n..1" -- "1..n" produto
+hospedagem_produto "n..1" -- "1..n" hospedagem
 
-quarto -- tipo_quarto
-quarto -- local_hospedagem
+servico "n..1" -- "1..n" tipo_servico
+servico "n..1" -- "1..n" funcionario
+servico "n..1" -- "1..n" hospedagem
 
-servico_funcionario_hospedagem -- servico
-servico_funcionario_hospedagem -- funcionario
-servico_funcionario_hospedagem -- hospedagem
-
-produto -- local_hospedagem
-
-comanda -- hospedagem
-
-comanda_produto -- comanda
-comanda_produto -- produto
-
-pessoa_hospedagem -- hospedagem
-pessoa_hospedagem -- pessoa_fisica
+hospedagem -- pessoa_fisica
 
 @enduml
