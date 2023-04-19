@@ -51,7 +51,6 @@ valor_total NUMERIC(8, 4) NOT NULL
 CREATE TABLE hospedagem(
 id BIGINT NOT NULL,
 id_reserva BIGINT NOT NULL,
-id_comanda BIGINT NOT NULL,
 id_pessoa_fisica BIGINT NOT NULL,
 data_check_in TIMESTAMP NOT NULL,
 data_check_out TIMESTAMP NOT NULL
