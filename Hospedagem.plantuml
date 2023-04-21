@@ -63,7 +63,6 @@ entity tipo_local_hospedagem{
     id <<PK>>
     nome
     descricao
-    numero_de_camas
 }
 
 entity local_hospedagem{
@@ -87,6 +86,7 @@ entity quarto{
     id_tipo_quarto <<FK>>
     numero
     capacidade
+    numero_de_camas
 }
 
 entity tipo_servico{
