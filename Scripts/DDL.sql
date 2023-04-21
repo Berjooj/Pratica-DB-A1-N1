@@ -61,7 +61,6 @@ CREATE TABLE tipo_local_hospedagem(
 	id BIGINT NOT NULL
 	, nome VARCHAR(50) NOT NULL
 	, descricao VARCHAR(50) NOT NULL
-	, numero_de_camas INT NOT NULL
 );
 
 CREATE TABLE local_hospedagem(
@@ -85,6 +84,7 @@ CREATE TABLE quarto(
 	, id_tipo_quarto BIGINT NOT NULL
 	, numero INTEGER NOT NULL
 	, capacidade INT NOT NULL
+    , numero_de_camas INT NOT NULL
 );
 
 CREATE TABLE tipo_servico(
