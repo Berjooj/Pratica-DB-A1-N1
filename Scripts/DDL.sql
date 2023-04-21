@@ -23,8 +23,8 @@ CREATE TABLE pessoa_fisica(
 CREATE TABLE pessoa_juridica(
 	id BIGINT NOT NULL
 	, cnpj VARCHAR(20) NOT NULL
-	, razao_social VARCHAR(50) NOT NULL
-	, nome_fantasia VARCHAR(50) NOT NULL
+	, razao_social VARCHAR(100) NOT NULL
+	, nome_fantasia VARCHAR(100) NOT NULL
 	, data_abertura TIMESTAMP NOT NULL
 	, id_pessoa BIGINT NOT NULL
 );
@@ -76,7 +76,7 @@ CREATE TABLE tipo_quarto(
 	id BIGINT NOT NULL
 	, nome VARCHAR(50) NOT NULL
 	, preco NUMERIC(8, 4) NOT NULL
-	, descricao VARCHAR(50) NOT NULL
+	, descricao VARCHAR(150) NOT NULL
 );
 
 CREATE TABLE quarto(
@@ -91,7 +91,7 @@ CREATE TABLE tipo_servico(
 	id BIGINT NOT NULL
 	, nome VARCHAR(50) NOT NULL
 	, preco NUMERIC(8, 4) NOT NULL
-	, descricao VARCHAR(50) NOT NULL
+	, descricao VARCHAR(150) NOT NULL
 );
 
 CREATE TABLE servico(
@@ -108,7 +108,7 @@ CREATE TABLE produto(
 	id BIGINT NOT NULL
 	, id_local_hospedagem BIGINT NOT NULL
 	, nome VARCHAR(50) NOT NULL
-	, descricao VARCHAR(50) NOT NULL
+	, descricao VARCHAR(150) NOT NULL
 	, preco NUMERIC(8, 4) NOT NULL
 	, quantidade_em_estoque INT NOT NULL
 );
