@@ -314,7 +314,7 @@ insert into produto (id, id_local_hospedagem, nome, descricao, preco, quantidade
 
 --Inserts reserva
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (1, 1,   10,   '1978-02-02', '1978-02-28', TRUE, 3982.82);
-insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (, 2,   7 ,   '2022-03-10', '2022-03-15', TRUE, 2532.03);
+insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (2, 2,   7 ,   '2022-03-10', '2022-03-15', TRUE, 2532.03);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (3, 3,   10,   '2022-06-20', '2022-06-28', TRUE, 1576.23);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (4, 4,   24,   '2012-07-10', '2012-07-17', TRUE,  883.31);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (5, 5,   17,   '1980-06-02', '1980-06-28', TRUE, 3982.82);
