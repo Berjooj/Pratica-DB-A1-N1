@@ -157,7 +157,8 @@ SELECT
 	, pf.nome AS "Nome"
 	, p.endereco || ', ' || p.cep::varchar || ', ' || p.estado || ' - ' || p.pais AS "Endereço"
 	, lh.endereco "Endereço hospedagem"
-	, (
+	, COALESCE(
+		(
 		SELECT
 			sum(ts.preco)
 		FROM
@@ -166,7 +167,8 @@ SELECT
 			ts.id = s.id_tipo_servico
 		WHERE
 			s.id_hospedagem = h.id
-	) +
+	), 0) +
+	COALESCE(
 	(
 		SELECT
 			sum(hp.valor)
@@ -174,8 +176,7 @@ SELECT
 			hospedagem_produto hp
 		WHERE
 			hp.id_hospedagem = h.id
-	)
-	+ r.valor_total
+	), 0) + r.valor_total
 	AS "Valor total"
 FROM
 	reserva r

@@ -256,7 +256,7 @@ insert into quarto (id, id_tipo_quarto, capacidade,numero_de_camas,numero) value
 insert into quarto (id, id_tipo_quarto, capacidade,numero_de_camas,numero) values (14, 3, 3, 2,7017);
 insert into quarto (id, id_tipo_quarto, capacidade,numero_de_camas,numero) values (15, 2, 4, 3,6026);
 insert into quarto (id, id_tipo_quarto, capacidade,numero_de_camas,numero) values (16, 5, 1, 1,1011);
-insert into quarto (id, id_tipo_quarto, capacidade,numero_de_camas,numero) values (17, 2, 4, 2,3022);
+insert into quarto (id, id_tipo_quarto, capacidade,numero_de_camas,numero) values (17, 3, 4, 2,3022);
 insert into quarto (id, id_tipo_quarto, capacidade,numero_de_camas,numero) values (18, 4, 2, 2,4058);
 insert into quarto (id, id_tipo_quarto, capacidade,numero_de_camas,numero) values (19, 4, 2, 2,1014);
 insert into quarto (id, id_tipo_quarto, capacidade,numero_de_camas,numero) values (20, 1, 5, 3,7004);
@@ -272,7 +272,7 @@ insert into quarto (id, id_tipo_quarto, capacidade,numero_de_camas,numero) value
 insert into quarto (id, id_tipo_quarto, capacidade,numero_de_camas,numero) values (30, 3, 3, 2,1044);
 
 --Inserts local_hospedagem
-insert into local_hospedagem (id, id_tipo_local_hospedagem, id_quarto, nome, descricao, endereco) values (1, 1, 2, 'Hotel Estadia', 'Hotel luxuoso pronto para receber os clientes com atenciosidade', '43533 Clyde Gallagher Avenue');
+insert into local_hospedagem (id, id_tipo_local_hospedagem, id_quarto, nome, descricao, endereco) values (1, 1, 14, 'Hotel Estadia', 'Hotel luxuoso pronto para receber os clientes com atenciosidade', '43533 Clyde Gallagher Avenue');
 insert into local_hospedagem (id, id_tipo_local_hospedagem, id_quarto, nome, descricao, endereco) values (2, 2, 4, 'Chalé do Mário', 'Chalé aconchegante, perfeito para passar o seu fim de semana', '95715 Mcbride Lane');
 insert into local_hospedagem (id, id_tipo_local_hospedagem, id_quarto, nome, descricao, endereco) values (3, 2, 5, 'Chalé Passarinho', 'Chalé aconchegante, perfeito para passar o seu fim de semana', '8162 Elka Park');
 insert into local_hospedagem (id, id_tipo_local_hospedagem, id_quarto, nome, descricao, endereco) values (4, 3, 5, 'Pousada Beira-mar', 'Localizado na beira do mar, venha curtir!', '369 Roth Street');
@@ -287,13 +287,13 @@ insert into local_hospedagem (id, id_tipo_local_hospedagem, id_quarto, nome, des
 insert into local_hospedagem (id, id_tipo_local_hospedagem, id_quarto, nome, descricao, endereco) values (13, 3, 8, 'Pousada Mar Bonito', 'Localizado na beira do mar, venha curtir!', '9 Buena Vista Court');
 insert into local_hospedagem (id, id_tipo_local_hospedagem, id_quarto, nome, descricao, endereco) values (14, 2, 6, 'Chalé Ensolarado', 'Chalé aconchegante, perfeito para passar o seu fim de semana', '676 Fairview Road');
 insert into local_hospedagem (id, id_tipo_local_hospedagem, id_quarto, nome, descricao, endereco) values (15, 1, 5, 'Hotel Medieval', 'Hotel luxuoso pronto para receber os clientes com atenciosidade', '07 Meadow Ridge Park');
-insert into local_hospedagem (id, id_tipo_local_hospedagem, id_quarto, nome, descricao, endereco) values (16, 1, 7, 'Hotel Império', 'Hotel luxuoso pronto para receber os clientes com atenciosidade', '5 Trailsway Circle');
+insert into local_hospedagem (id, id_tipo_local_hospedagem, id_quarto, nome, descricao, endereco) values (16, 1, 17, 'Hotel Império', 'Hotel luxuoso pronto para receber os clientes com atenciosidade', '5 Trailsway Circle');
 insert into local_hospedagem (id, id_tipo_local_hospedagem, id_quarto, nome, descricao, endereco) values (17, 3, 2, 'Pousada Paraíso', 'Localizado na beira do mar, venha curtir!', '68335 Beilfuss Avenue');
 insert into local_hospedagem (id, id_tipo_local_hospedagem, id_quarto, nome, descricao, endereco) values (18, 2, 4, 'Chalé Aconchegante', 'Chalé aconchegante, perfeito para passar o seu fim de semana', '60 Pawling Park');
 insert into local_hospedagem (id, id_tipo_local_hospedagem, id_quarto, nome, descricao, endereco) values (19, 1, 7, 'Hotel Sol', 'Hotel luxuoso pronto para receber os clientes com atenciosidade', '35 Dawn Place');
 insert into local_hospedagem (id, id_tipo_local_hospedagem, id_quarto, nome, descricao, endereco) values (20, 1, 3, 'Hotel Perfeito', 'Hotel luxuoso pronto para receber os clientes com atenciosidade', '9 Bartillon Avenue');
 insert into local_hospedagem (id, id_tipo_local_hospedagem, id_quarto, nome, descricao, endereco) values (21, 3, 8, 'Pousada Sorriso', 'Localizado na beira do mar, venha curtir!', '65 Bashford Terrace');
-insert into local_hospedagem (id, id_tipo_local_hospedagem, id_quarto, nome, descricao, endereco) values (22, 3, 6, 'Pousada Refrescante', 'Localizado na beira do mar, venha curtir!', '703 Stone Corner Avenue');
+insert into local_hospedagem (id, id_tipo_local_hospedagem, id_quarto, nome, descricao, endereco) values (22, 3, 21, 'Pousada Refrescante', 'Localizado na beira do mar, venha curtir!', '703 Stone Corner Avenue');
 insert into local_hospedagem (id, id_tipo_local_hospedagem, id_quarto, nome, descricao, endereco) values (23, 1, 8, 'Hotel Luiz', 'Hotel luxuoso pronto para receber os clientes com atenciosidade', '3957 1st Avenue');
 insert into local_hospedagem (id, id_tipo_local_hospedagem, id_quarto, nome, descricao, endereco) values (24, 2, 4, 'Chalé Sonho', 'Chalé aconchegante, perfeito para passar o seu fim de semana', '31663 Loomis Court');
 insert into local_hospedagem (id, id_tipo_local_hospedagem, id_quarto, nome, descricao, endereco) values (25, 2, 8, 'Chalé Calmo', 'Chalé aconchegante, perfeito para passar o seu fim de semana', '69962 Bonner Trail');
@@ -322,15 +322,15 @@ insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, 
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (7, 7,   11,   '1980-10-18', '1980-11-01', TRUE, 1576.23);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (8, 8,   7 ,   '2002-05-12', '2002-05-23', TRUE, 2532.03);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (9, 9,  16,  '2020-03-02', '2020-03-30', TRUE, 3982.82);
-insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (10, 10, 11, '2022-10-10', '2022-10-20', TRUE, 1576.23);
+insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (10, 60, 11, '2022-10-10', '2022-10-20', TRUE, 1576.23);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (11, 11, 26, '2017-05-22', '2017-05-28', TRUE, 2532.03);
-insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (12, 12, 18, '2022-08-02', '2022-08-20', TRUE,  883.31);
+insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (12, 62, 18, '2022-08-02', '2022-08-20', TRUE,  883.31);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (13, 13, 28, '2022-03-01', '2022-03-10', TRUE, 3982.82);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (14, 14, 8 , '2001-02-12', '2001-02-28', TRUE, 1576.23);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (15, 15, 7 , '2004-03-25', '2004-04-03', TRUE,  883.31);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (16, 16, 16, '2010-02-28', '2010-03-05', TRUE, 2532.03);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (17, 17, 9 , '1999-02-15', '1999-02-28', TRUE, 1576.23);
-insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (18, 18, 2 , '1990-06-02', '1990-06-10', TRUE, 2532.03);
+insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (18, 71, 2 , '1990-06-02', '1990-06-10', TRUE, 2532.03);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (19, 19, 23, '1999-08-05', '1999-08-23', TRUE, 3982.82);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (20, 20, 5 , '1988-03-02', '1988-03-16', TRUE, 3982.82);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (21, 21, 24, '1978-06-08', '1978-06-26', TRUE,  883.31);
@@ -350,19 +350,19 @@ insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, 
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (35, 35, 14, '2004-01-20', '2004-02-01', FALSE,    2532.03);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (36, 36, 9 , '2019-03-02', '2019-03-15', FALSE,    3982.82);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (37, 37, 8 , '1993-07-04', '1993-07-29', FALSE,     883.31);
-insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (38, 38, 3 , '1982-09-01', '1982-09-28', FALSE,    2532.03);
+insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (38, 75, 3 , '1982-09-01', '1982-09-28', FALSE,    2532.03);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (39, 39, 10, '1998-12-10', '1998-12-22', FALSE,    1576.23);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (40, 40, 19, '2021-10-15', '2021-10-26', FALSE,    3982.82);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (41, 41, 4 , '2000-03-30', '2000-04-04', FALSE,    2532.03);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (42, 42, 28, '2003-08-20', '2003-08-30', FALSE,    1576.23);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (43, 43, 1 , '1993-11-12', '1993-11-21', FALSE,    3982.82);
-insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (44, 44, 3 , '1994-06-13', '1994-06-26', FALSE,     883.31);
+insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (44, 80, 3 , '1994-06-13', '1994-06-26', FALSE,     883.31);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (45, 45, 11, '1998-03-28', '1998-04-05', FALSE,    2532.03);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (46, 46, 27, '1984-12-22', '1984-12-28', FALSE,    1576.23);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (47, 47, 7 , '2000-08-12', '2000-08-23', FALSE,    3982.82);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (48, 48, 12, '1997-07-27', '1997-08-05', FALSE,     883.31);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (49, 49, 3 , '1991-01-05', '1991-01-27', FALSE,    1576.23);
-insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (50, 50, 3 , '1992-10-24', '1992-10-31', FALSE,    2532.03);
+insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (50, 95, 3 , '1992-10-24', '1992-10-31', FALSE,    2532.03);
 
 --Inserts hospedagem
 insert into hospedagem (id, id_reserva, id_pessoa_fisica, data_check_in, data_check_out) values (1, 1, 1,    '1978-02-02', '1978-02-28');
@@ -405,9 +405,9 @@ insert into hospedagem_produto (id_hospedagem, id_produto, quantidade, valor) va
 insert into hospedagem_produto (id_hospedagem, id_produto, quantidade, valor) values (7, 1, 3, 0.55);
 insert into hospedagem_produto (id_hospedagem, id_produto, quantidade, valor) values (8, 4, 2, 0.86);
 insert into hospedagem_produto (id_hospedagem, id_produto, quantidade, valor) values (9, 3, 1, 0.46);
-insert into hospedagem_produto (id_hospedagem, id_produto, quantidade, valor) values (10, 2, 1, 0.88);
+insert into hospedagem_produto (id_hospedagem, id_produto, quantidade, valor) values (10, 1, 1, 0.88);
 insert into hospedagem_produto (id_hospedagem, id_produto, quantidade, valor) values (11, 1, 3, 0.70);
-insert into hospedagem_produto (id_hospedagem, id_produto, quantidade, valor) values (12, 6, 2, 0.28);
+insert into hospedagem_produto (id_hospedagem, id_produto, quantidade, valor) values (12, 1, 2, 0.28);
 insert into hospedagem_produto (id_hospedagem, id_produto, quantidade, valor) values (13, 5, 2, 0.29);
 insert into hospedagem_produto (id_hospedagem, id_produto, quantidade, valor) values (14, 3, 1, 0.01);
 insert into hospedagem_produto (id_hospedagem, id_produto, quantidade, valor) values (15, 3, 3, 0.90);
@@ -447,14 +447,14 @@ insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_in
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (17, 15, 7, 1 , '1980-10-25', '1980-10-27', TRUE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (18, 14, 12, 1, '2022-08-05', '2022-08-06', TRUE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (19, 11, 18, 1, '1990-06-06', '1990-06-07', FALSE);
-insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (20, 5, 10, 4 , '2022-10-15', '2022-10-16', TRUE);
+insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (20, 5, 10, 1, '2022-10-15', '2022-10-16', TRUE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (21, 9, 5, 2  , '1980-06-18', '1980-06-20', TRUE);
-insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (22, 9, 18, 3 , '1990-06-03', '1990-06-03', TRUE);
+insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (22, 9, 18, 1 , '1990-06-03', '1990-06-03', TRUE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (23, 2, 29, 4 , '1994-07-19', '1994-07-20', TRUE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (24, 3, 28, 1 , '1997-06-08', '1997-06-12', TRUE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (25, 9, 2, 4  , '2022-03-11', '2022-03-11', FALSE);
-insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (26, 10, 12, 3, '2022-08-15', '2022-08-16', TRUE);
-insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (27, 9, 12, 3 , '2022-08-03', '2022-08-04', TRUE);
+insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (26, 10, 12, 1, '2022-08-15', '2022-08-16', TRUE);
+insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (27, 9, 12, 1 , '2022-08-03', '2022-08-04', TRUE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (28, 15, 30, 4, '1984-04-18', '1984-04-20', FALSE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (29, 5, 7, 3  , '1980-10-28', '1980-10-30', TRUE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (30, 13, 20, 5, '1988-03-09', '1988-03-11', FALSE);
