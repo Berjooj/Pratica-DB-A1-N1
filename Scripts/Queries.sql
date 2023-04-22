@@ -26,6 +26,7 @@ SELECT
 	h.*
 FROM
 	hospedagem h;
+--WHERE h.data_check_in BETWEEN '2022-01-01'::date AND '2022-12-31'::date;
 
 SELECT
 	pf.*
@@ -205,7 +206,7 @@ JOIN funcionario f ON
 	f.id = s.id_funcionario
 JOIN pessoa_fisica pf_f ON
 	pf_f.id = f.id_pessoa_fisica
-GROUP pf.nome
+GROUP BY pf.nome
 	, pf.cpf
 	, pf_f.nome;
 

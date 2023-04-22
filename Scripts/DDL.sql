@@ -5,7 +5,7 @@ CREATE TABLE pessoa (
 	, pais VARCHAR(50) NOT NULL
 	, estado VARCHAR(50) NOT NULL
 	, cidade VARCHAR(50) NOT NULL
-	, endereco VARCHAR(50) NOT NULL
+	, endereco VARCHAR(150) NOT NULL
 	, cep INT NOT NULL
 );
 
@@ -23,8 +23,8 @@ CREATE TABLE pessoa_fisica(
 CREATE TABLE pessoa_juridica(
 	id BIGINT NOT NULL
 	, cnpj VARCHAR(20) NOT NULL
-	, razao_social VARCHAR(100) NOT NULL
-	, nome_fantasia VARCHAR(100) NOT NULL
+	, razao_social VARCHAR(150) NOT NULL
+	, nome_fantasia VARCHAR(150) NOT NULL
 	, data_abertura TIMESTAMP NOT NULL
 	, id_pessoa BIGINT NOT NULL
 );
@@ -35,7 +35,7 @@ CREATE TABLE funcionario(
 	, matricula VARCHAR(20) NOT NULL
 	, data_admissao TIMESTAMP NOT NULL
 	, situacao BOOLEAN NOT NULL
-	, cargo VARCHAR(50) NOT NULL
+	, cargo VARCHAR(150) NOT NULL
 	, salario NUMERIC(8, 4) NOT NULL
 );
 
@@ -59,24 +59,24 @@ CREATE TABLE hospedagem(
 
 CREATE TABLE tipo_local_hospedagem(
 	id BIGINT NOT NULL
-	, nome VARCHAR(50) NOT NULL
-	, descricao VARCHAR(50) NOT NULL
+	, nome VARCHAR(150) NOT NULL
+	, descricao VARCHAR(300) NOT NULL
 );
 
 CREATE TABLE local_hospedagem(
 	id BIGINT NOT NULL
 	, id_tipo_local_hospedagem BIGINT NOT NULL
 	, id_quarto BIGINT NOT NULL
-	, nome VARCHAR(50) NOT NULL
-	, descricao VARCHAR(50) NOT NULL
-	, endereco VARCHAR(50) NOT NULL
+	, nome VARCHAR(100) NOT NULL
+	, descricao VARCHAR(300) NOT NULL
+	, endereco VARCHAR(150) NOT NULL
 );
 
 CREATE TABLE tipo_quarto(
 	id BIGINT NOT NULL
-	, nome VARCHAR(50) NOT NULL
+	, nome VARCHAR(100) NOT NULL
 	, preco NUMERIC(8, 4) NOT NULL
-	, descricao VARCHAR(150) NOT NULL
+	, descricao VARCHAR(300) NOT NULL
 );
 
 CREATE TABLE quarto(
@@ -89,9 +89,9 @@ CREATE TABLE quarto(
 
 CREATE TABLE tipo_servico(
 	id BIGINT NOT NULL
-	, nome VARCHAR(50) NOT NULL
+	, nome VARCHAR(100) NOT NULL
 	, preco NUMERIC(8, 4) NOT NULL
-	, descricao VARCHAR(150) NOT NULL
+	, descricao VARCHAR(300) NOT NULL
 );
 
 CREATE TABLE servico(
@@ -107,8 +107,8 @@ CREATE TABLE servico(
 CREATE TABLE produto(
 	id BIGINT NOT NULL
 	, id_local_hospedagem BIGINT NOT NULL
-	, nome VARCHAR(50) NOT NULL
-	, descricao VARCHAR(150) NOT NULL
+	, nome VARCHAR(100) NOT NULL
+	, descricao VARCHAR(300) NOT NULL
 	, preco NUMERIC(8, 4) NOT NULL
 	, quantidade_em_estoque INT NOT NULL
 );
@@ -149,6 +149,7 @@ ALTER TABLE reserva ADD FOREIGN KEY(id_local_hospedagem) REFERENCES local_hosped
 
 ALTER TABLE hospedagem ADD PRIMARY KEY(id);
 ALTER TABLE hospedagem ADD FOREIGN KEY(id_reserva) REFERENCES reserva(id);
+ALTER TABLE hospedagem ADD FOREIGN KEY(id_pessoa_fisica) REFERENCES pessoa_fisica(id);
 
 ALTER TABLE tipo_servico ADD PRIMARY KEY(id);
 
