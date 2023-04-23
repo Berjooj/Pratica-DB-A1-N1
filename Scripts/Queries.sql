@@ -44,16 +44,16 @@ WHERE
 	);
 
 -- Referência
-SELECT * FROM reserva;
-SELECT * FROM pessoa ;
+SELECT * FROM quarto; -- WHERE numero IN (1903, 1909);
+SELECT * FROM local_hospedagem; -- WHERE id_quarto IN (4, 5);
+SELECT * FROM reserva; -- WHERE id_local_hospedagem IN (2, 3, 4, 12, 15, 18, 24, 28, 30);
+SELECT * FROM pessoa;
 SELECT * FROM pessoa_juridica;
 SELECT * FROM pessoa_fisica;
-SELECT * FROM local_hospedagem;
-SELECT * FROM quarto;
 
 -- 4) Faça uma consulta que apresente a quantidade de clientes que já se hospedaram em um quarto do tipo Luxo.
 SELECT
-	*
+	count(*) AS "Quantidade hospedagens"
 FROM
 	hospedagem h
 JOIN reserva r ON
@@ -75,19 +75,23 @@ SELECT * FROM tipo_quarto;
 
 -- 5) Faça uma consulta que apresente a média geral de todos os valores gastos em produtos nas hospedagens.
 SELECT
-	avg(hp.valor) AS "Valor"
-	, p.nome AS "Nome produto"
+	h.id AS "ID Hospedagem"
+	, sum(hp.valor) / sum(hp.quantidade) AS "Valor médio gasto por hospedagem"
+--	, string_agg(hp.valor::varchar, ', ')
+--	, string_agg(hp.quantidade::varchar, ', ')
 FROM
 	hospedagem_produto hp
-JOIN produto p ON
-	p.id = hp.id_produto
+JOIN hospedagem h ON
+	h.id = hp.id_hospedagem
 GROUP BY
-	hp.id_produto
-	, p.nome;
+	hp.id_hospedagem
+	, h.id
+ORDER BY
+	h.id;
 
 -- Referência
 SELECT * FROM hospedagem_produto;
-SELECT * FROM produto;
+SELECT * FROM hospedagem;
 
 -- 6) Faça uma consulta que apresente a soma dos valores gastos por produtos agrupados por tipo de quarto.
 SELECT
@@ -104,7 +108,9 @@ JOIN quarto q ON
 JOIN tipo_quarto tq ON
 	tq.id = q.id_tipo_quarto
 GROUP BY
-	tq.id;
+	tq.id
+ORDER BY
+	sum(hp.valor) ASC;
 
 -- Referência
 SELECT * FROM hospedagem_produto;
@@ -130,7 +136,7 @@ SELECT * FROM hospedagem;
 -- 8) Faça uma consulta que apresente o CNPJ apenas dos clientes pessoa jurídica que utilizaram o serviço de lavanderia.
 -- Mesmo que em hospedagens diferentes tenham utilizado o serviço, somente deve aparecer na lista uma vez o CNPJ.
 SELECT
-	DISTINCT pj.cnpj
+	DISTINCT pj.cnpj AS "CNPJ Lavanderia"
 FROM
 	pessoa_juridica pj
 JOIN reserva r ON
@@ -175,8 +181,7 @@ SELECT
 			hospedagem_produto hp
 		WHERE
 			hp.id_hospedagem = h.id
-	), 0) + r.valor_total
-	AS "Valor total"
+	), 0) + r.valor_total AS "Valor total"
 FROM
 	reserva r
 JOIN pessoa p ON
@@ -219,7 +224,9 @@ JOIN pessoa_fisica pf_f ON
 	pf_f.id = f.id_pessoa_fisica
 GROUP BY pf.nome
 	, pf.cpf
-	, pf_f.nome;
+	, pf_f.nome
+ORDER BY
+	pf_f.nome;
 
 -- Referência
 SELECT * FROM hospedagem;
@@ -229,6 +236,27 @@ SELECT * FROM funcionario;
 SELECT * FROM pessoa_fisica;
 
 -- 11) Faça uma consulta de sua escolha que gere um relatório relevante para regra de negócio. O nível de complexidade da consulta definirá o peso para a questão.
+-- Faça uma consulta que gere a quantidade de hospedagens por tipo de local a cada década
+SELECT
+	count(*) AS "Quantidade de hospedagens"
+	, tlh.nome AS "Tipo local"
+	, EXTRACT(YEAR FROM date_trunc('decade', data_check_in)) AS "Década"
+FROM
+	hospedagem h
+JOIN reserva r ON
+	r.id = h.id_reserva
+JOIN local_hospedagem lh ON
+	lh.id = r.id_local_hospedagem
+JOIN tipo_local_hospedagem tlh ON
+	tlh.id = lh.id_tipo_local_hospedagem
+GROUP BY
+	date_trunc('decade', data_check_in)
+	, tlh.nome
+ORDER BY
+	date_trunc('decade', data_check_in) ASC;
 
-
-
+-- Referência
+SELECT * FROM hospedagem;
+SELECT * FROM reserva;
+SELECT * FROM local_hospedagem;
+SELECT * FROM tipo_local_hospedagem;
