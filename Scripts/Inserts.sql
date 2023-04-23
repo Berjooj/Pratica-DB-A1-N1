@@ -180,7 +180,7 @@ insert into funcionario (id, id_pessoa_fisica, matricula, data_admissao, situaca
 insert into funcionario (id, id_pessoa_fisica, matricula, data_admissao, situacao, cargo, salario) values (6,  61, 645,   '2020-03-21', FALSE, 'Segurança', 3443.69);
 insert into funcionario (id, id_pessoa_fisica, matricula, data_admissao, situacao, cargo, salario) values (7,  62, 600,   '1977-06-21', FALSE, 'Lavanderia', 3660.80);
 insert into funcionario (id, id_pessoa_fisica, matricula, data_admissao, situacao, cargo, salario) values (8,  63, 633,   '1986-12-05', FALSE, 'Garçom', 4850.24);
-insert into funcionario (id, id_pessoa_fisica, matricula, data_admissao, situacao, cargo, salario) values (9,  64, 481,   '1976-04-12', TRUE, 'Faxineiro', 3588.94);
+insert into funcionario (id, id_pessoa_fisica, matricula, data_admissao, situacao, cargo, salario) values (9,  64, 481,   '1976-04-12', TRUE, 'Lavanderia', 3588.94);
 insert into funcionario (id, id_pessoa_fisica, matricula, data_admissao, situacao, cargo, salario) values (10, 65, 696,	  '2019-04-01', TRUE, 'Cozinheiro', 2100.57);
 insert into funcionario (id, id_pessoa_fisica, matricula, data_admissao, situacao, cargo, salario) values (11, 66, 152,   '1985-09-13', TRUE, 'Segurança', 1547.65);
 insert into funcionario (id, id_pessoa_fisica, matricula, data_admissao, situacao, cargo, salario) values (12, 67, 380,   '1986-08-30', TRUE, 'Faxineiro', 5394.35);
@@ -314,11 +314,11 @@ insert into produto (id, id_local_hospedagem, nome, descricao, preco, quantidade
 
 --Inserts reserva
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (1, 1,   10,   '1978-02-02', '1978-02-28', TRUE, 3982.82);
-insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (2, 2,   7 ,   '2022-03-10', '2022-03-15', TRUE, 2532.03);
+insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (2, 90,   7 ,   '2022-03-10', '2022-03-15', TRUE, 2532.03);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (3, 3,   10,   '2022-06-20', '2022-06-28', TRUE, 1576.23);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (4, 4,   24,   '2012-07-10', '2012-07-17', TRUE,  883.31);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (5, 5,   17,   '1980-06-02', '1980-06-28', TRUE, 3982.82);
-insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (6, 6,   15,   '1990-12-15', '1990-12-23', TRUE,  883.31);
+insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (6, 95,   15,   '1990-12-15', '1990-12-23', TRUE,  883.31);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (7, 7,   11,   '1980-10-18', '1980-11-01', TRUE, 1576.23);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (8, 8,   7 ,   '2002-05-12', '2002-05-23', TRUE, 2532.03);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (9, 9,  16,  '2020-03-02', '2020-03-30', TRUE, 3982.82);
@@ -326,7 +326,7 @@ insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, 
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (11, 11, 26, '2017-05-22', '2017-05-28', TRUE, 2532.03);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (12, 62, 18, '2022-08-02', '2022-08-20', TRUE,  883.31);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (13, 13, 28, '2022-03-01', '2022-03-10', TRUE, 3982.82);
-insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (14, 14, 8 , '2001-02-12', '2001-02-28', TRUE, 1576.23);
+insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (14, 78, 8 , '2001-02-12', '2001-02-28', TRUE, 1576.23);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (15, 15, 7 , '2004-03-25', '2004-04-03', TRUE,  883.31);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (16, 16, 16, '2010-02-28', '2010-03-05', TRUE, 2532.03);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (17, 17, 9 , '1999-02-15', '1999-02-28', TRUE, 1576.23);
@@ -362,7 +362,7 @@ insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, 
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (47, 47, 7 , '2000-08-12', '2000-08-23', FALSE,    3982.82);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (48, 48, 12, '1997-07-27', '1997-08-05', FALSE,     883.31);
 insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (49, 49, 3 , '1991-01-05', '1991-01-27', FALSE,    1576.23);
-insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (50, 95, 3 , '1992-10-24', '1992-10-31', FALSE,    2532.03);
+insert into reserva (id, id_pessoa, id_local_hospedagem, data_inicio, data_fim, status_reserva, valor_total) values (50, 50, 3 , '1992-10-24', '1992-10-31', FALSE,    2532.03);
 
 --Inserts hospedagem
 insert into hospedagem (id, id_reserva, id_pessoa_fisica, data_check_in, data_check_out) values (1, 1, 1,    '1978-02-02', '1978-02-28');
@@ -430,12 +430,12 @@ insert into hospedagem_produto (id_hospedagem, id_produto, quantidade, valor) va
 --Inserts servico
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (1, 11, 20, 3 , '1988-03-10', '1988-03-12', FALSE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (2, 8, 20, 4  , '1988-03-04', '1988-03-04', TRUE);
-insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (3, 3, 14, 4  , '2001-02-12', '2001-02-15', TRUE);
+insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (3, 3, 14, 1  , '2001-02-12', '2001-02-15', TRUE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (4, 15, 2, 5  , '2022-03-13', '2022-03-14', TRUE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (5, 6, 2, 5   , '2022-03-12', '2022-03-12', FALSE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (6, 12, 28, 1 , '1997-06-09', '1997-06-10', TRUE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (7, 15, 5, 4  , '1980-06-11', '1980-06-14', TRUE);
-insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (8, 12, 6, 4  , '1990-12-17', '1990-12-18', TRUE);
+insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (8, 13, 6, 1  , '1990-12-17', '1990-12-18', TRUE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (9, 1, 17, 1  , '1999-02-20', '1999-02-22', TRUE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (10, 2, 23, 2 , '2007-07-08', '2007-07-09', FALSE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (11, 9, 1, 3  , '1978-02-10', '1978-02-10', TRUE);
@@ -452,7 +452,7 @@ insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_in
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (22, 9, 18, 1 , '1990-06-03', '1990-06-03', TRUE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (23, 2, 29, 4 , '1994-07-19', '1994-07-20', TRUE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (24, 3, 28, 1 , '1997-06-08', '1997-06-12', TRUE);
-insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (25, 9, 2, 4  , '2022-03-11', '2022-03-11', FALSE);
+insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (25, 9, 2, 1  , '2022-03-11', '2022-03-11', FALSE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (26, 10, 12, 1, '2022-08-15', '2022-08-16', TRUE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (27, 9, 12, 1 , '2022-08-03', '2022-08-04', TRUE);
 insert into servico (id, id_funcionario, id_hospedagem, id_tipo_servico, data_inicio_servico, data_fim_servico, status_do_servico) values (28, 15, 30, 4, '1984-04-18', '1984-04-20', FALSE);

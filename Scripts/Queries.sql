@@ -5,11 +5,7 @@ FROM
 	servico s;
 
 -- Referência
--- Serviço
-SELECT
-	s.*
-FROM
-	servico s;
+SELECT * FROM servico s;
 
 -- 2) Faça uma consulta que apresente o nome dos clientes que se hospedaram no ano de 2022.
 SELECT
@@ -22,16 +18,8 @@ WHERE
 	h.data_check_in BETWEEN '2022-01-01'::date AND '2022-12-31'::date;
 
 -- Referência
-SELECT
-	h.*
-FROM
-	hospedagem h;
---WHERE h.data_check_in BETWEEN '2022-01-01'::date AND '2022-12-31'::date;
-
-SELECT
-	pf.*
-FROM
-	pessoa_fisica pf;
+SELECT * FROM hospedagem;
+SELECT * FROM pessoa_fisica pf;
 
 -- 3) Faça uma consulta que apresente o nome e razão social e endereço dos clientes que já fizeram reservas no quarto de número 1903 e no 1909.
 SELECT
@@ -56,30 +44,12 @@ WHERE
 	);
 
 -- Referência
-SELECT
-	r.*
-FROM
-	reserva r;
-
-SELECT
-	p.*
-FROM
-	pessoa p;
-
-SELECT
-	pj.*
-FROM
-	pessoa_juridica pj;
-
-SELECT
-	lh.*
-FROM
-	local_hospedagem lh;
-
-SELECT
-	q.*
-FROM
-	quarto q;
+SELECT * FROM reserva;
+SELECT * FROM pessoa ;
+SELECT * FROM pessoa_juridica;
+SELECT * FROM pessoa_fisica;
+SELECT * FROM local_hospedagem;
+SELECT * FROM quarto;
 
 -- 4) Faça uma consulta que apresente a quantidade de clientes que já se hospedaram em um quarto do tipo Luxo.
 SELECT
@@ -96,6 +66,13 @@ JOIN tipo_quarto tq ON
 	tq.id = q.id_tipo_quarto
 	AND tq.nome = 'Luxo';
 
+-- Referência
+SELECT * FROM hospedagem;
+SELECT * FROM reserva;
+SELECT * FROM local_hospedagem;
+SELECT * FROM quarto;
+SELECT * FROM tipo_quarto;
+
 -- 5) Faça uma consulta que apresente a média geral de todos os valores gastos em produtos nas hospedagens.
 SELECT
 	avg(hp.valor) AS "Valor"
@@ -107,6 +84,10 @@ JOIN produto p ON
 GROUP BY
 	hp.id_produto
 	, p.nome;
+
+-- Referência
+SELECT * FROM hospedagem_produto;
+SELECT * FROM produto;
 
 -- 6) Faça uma consulta que apresente a soma dos valores gastos por produtos agrupados por tipo de quarto.
 SELECT
@@ -125,6 +106,13 @@ JOIN tipo_quarto tq ON
 GROUP BY
 	tq.id;
 
+-- Referência
+SELECT * FROM hospedagem_produto;
+SELECT * FROM produto;
+SELECT * FROM local_hospedagem;
+SELECT * FROM quarto;
+SELECT * FROM tipo_quarto;
+
 -- 7) Faça uma consulta que apresente as reservas em que o cliente não compareceu baseados nas hospedagens efetivadas.
 SELECT
 	r.*
@@ -134,6 +122,10 @@ LEFT JOIN hospedagem h ON
 	h.id_reserva = r.id
 WHERE
 	h.id IS NULL;
+
+-- Referência
+SELECT * FROM reserva;
+SELECT * FROM hospedagem;
 
 -- 8) Faça uma consulta que apresente o CNPJ apenas dos clientes pessoa jurídica que utilizaram o serviço de lavanderia.
 -- Mesmo que em hospedagens diferentes tenham utilizado o serviço, somente deve aparecer na lista uma vez o CNPJ.
@@ -150,6 +142,13 @@ JOIN servico s ON
 JOIN tipo_servico ts ON
 	ts.id = s.id_tipo_servico
 	AND ts.nome = 'Lavanderia';
+
+-- Referência
+SELECT * FROM pessoa_juridica;
+SELECT * FROM reserva;
+SELECT * FROM hospedagem;
+SELECT * FROM servico;
+SELECT * FROM tipo_servico;
 
 -- 9) Faça uma consulta que apresente o todos os clientes com nome ou razão social, endereço e o valor total gasto em uma hospedagem, incluindo serviços e consumos.
 SELECT
@@ -191,6 +190,17 @@ JOIN hospedagem h ON
 JOIN local_hospedagem lh ON
 	lh.id = r.id_local_hospedagem;
 
+-- Referência
+SELECT * FROM reserva;
+SELECT * FROM pessoa;
+SELECT * FROM pessoa_juridica;
+SELECT * FROM pessoa_fisica;
+SELECT * FROM hospedagem;
+SELECT * FROM local_hospedagem;
+SELECT * FROM servico;
+SELECT * FROM tipo_servico;
+SELECT * FROM hospedagem_produto;
+
 -- 10) Faça uma consulta que apresente o nome e CPF dos clientes que já foram atendidos por um funcionário e o nome desse funcionário.
 -- Caso tenha sido atendido por esse mesmo funcionário, não repita a informação.
 SELECT
@@ -210,6 +220,13 @@ JOIN pessoa_fisica pf_f ON
 GROUP BY pf.nome
 	, pf.cpf
 	, pf_f.nome;
+
+-- Referência
+SELECT * FROM hospedagem;
+SELECT * FROM pessoa_fisica;
+SELECT * FROM servico;
+SELECT * FROM funcionario;
+SELECT * FROM pessoa_fisica;
 
 -- 11) Faça uma consulta de sua escolha que gere um relatório relevante para regra de negócio. O nível de complexidade da consulta definirá o peso para a questão.
 
