@@ -53,7 +53,6 @@ entity reserva{
 entity hospedagem{
     id <<PK>>
     id_reserva <<FK>>
-    id_comanda <<FK>>
     id_pessoa_fisica <<FK>>
     data_check_in
     data_check_out
@@ -145,6 +144,6 @@ servico "n..1" -- "1..n" tipo_servico
 servico "n..1" -- "1..n" funcionario
 servico "n..1" -- "1..n" hospedagem
 
-hospedagem -- pessoa_fisica
+hospedagem "n..1" -- "1..0" pessoa_fisica
 
 @enduml
