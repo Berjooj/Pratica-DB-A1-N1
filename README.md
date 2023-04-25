@@ -1,4 +1,7 @@
-Regras para avaliação A1/N1:
+
+# Avaliação A1/N1:
+### Disciplina Práticas de Banco de Dados - Ciência da Computação - UniRitter/FAPA
+Integrantes: Bernardo Moreira (@Berjooj), Enzo Petry (@EnzoPetry), Igor Wildner Pereira (@Igorwilp), Israel Andreotti (@israelitas), João Andre Aguiar de Bitencourt (@JoaoAndre78)
 
 - Apresente em aula as consultas e o Diagrama Entidade Relacionamento (DER).
 - As informações inseridas na apresentação, formato e a regra de negócio fazem parte da avaliação.
